@@ -85,54 +85,38 @@ active
 
 <!--===== start project-slider section  =====-->
 
-@foreach ($sections as $section )
-    @if($section->section=='offer' && $section->page_title=='home')
+@foreach ($slider as $slide )
+  
 <section class="project-slider">
     <div class="container">
         <div class="details dis-flx justify-space-between align-itm-center">
             <div class="project-details">
                 <div class="head">
-                    <h2>{{ $section->title }}</h2>
+                    <h2>{{ $slide->title }}</h2>
                 </div>
                 <p>
-                    {{ $section->description }}
+                    {{ $slide->description }}
                 </p>
             </div>
             <a class="btn-brdr" style="color: #000; border-color:#000;" href="{{ route('our_projects') }}">View All</a>
         </div>
         <div class="swiper mySwiper">
             <div class="swiper-wrapper" style="height: 400px;">
+                
+@foreach ($assets as $asset )
+
                 <div class="swiper-slide">
-                    <img src="{{ asset($section->img) }}" />
+                    <img src="{{ asset($asset->media) }}" />
                     <div class="swiper-slide-detail">
                         <div class="info">
-                            <a href="{{ route('Cooperate_project') }}" class="Cooperate-btn">Cooperate Design</a>
+                            <a href="{{ route('Cooperate_project') }}" class="Cooperate-btn">{{ $asset->title }}</a>
                             <a href="{{ LaravelLocalization::localizeUrl('/cooperate_project') }}" class="view-project">View Project</a>
 
                         </div>
                     </div>
                 </div>
-                <div class="swiper-slide">
-                    <img src="{{ asset($section->img2) }}" />
-                    <div class="swiper-slide-detail">
-                        <div class="info">
-                            <a href="{{ route('residential_project') }}" class="Cooperate-btn">Residential Design</a>
-                            <a href="{{ LaravelLocalization::localizeUrl('/residential_project') }}" class="view-project">View Project</a>
-
-                        </div>
-                    </div>
-                </div>
-         
-                <div class="swiper-slide">
-                <img src="{{   asset($section->img3)}}" />
-                    <div class="swiper-slide-detail">
-                        <div class="info">
-                            <a href="" class="Cooperate-btn">Commercial</a>
-                            <a href="" class="view-project">View Project</a>
-
-                        </div>
-                    </div>
-                </div>
+             @endforeach
+            
             </div>
             <div class="swiper-button-next"></div>
             <div class="swiper-button-prev"></div>
@@ -140,33 +124,36 @@ active
     </div>
 
 </section>
-@endif
 @endforeach
 <!--===== end project-slider section  =====-->
+
 <!--===== start testimonials section  =====-->
+
 <section class="testimonials">
     <div class="container">
         <div class="testimonial-header">
             <h2>What Our Clients Say</h2>
         </div>
+        @foreach ($sayings['sayings'] as $saying )
         <div class="testimonials-content dis-flx justify-space-between align-itm-center">
             <div class="testimonial-imgs">
-                <img src="{{ url('assets/images/clientImages/pic01.jpg') }}" alt="">
-                <img class="active" src="{{ url('assets/images/clientImages/pic02.jpg') }}" alt="">
-                <img src="{{ url('assets/images/clientImages/pic03.jpg') }}" alt="">
+                <img class="active" src="{{ asset($saying->img) }}" alt="">
+                
             </div>
             <div class="testimonials-messages">
                 <i class="fa-solid fa-quote-left quote"></i>
-                <h3>There Services where best and friendly</h3>
-                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptate consequuntur est porro, deleniti
-                    illo ratione aut iure laboriosam,</p>
-                <h5>Abraham kosgard</h5>
+                <h3>{{ $saying->title }}</h3>
+                <p>{{ $saying->sentence }}</p>
+                <h5>{{ $saying->person_position }}</h5>
                 <span>Clients from ECD</span>
             </div>
         </div>
+        @endforeach
+
     </div>
 
 </section>
+
 <!--===== end testimonials section  =====-->
 <!--===== start contact section =====-->
 <section class="contact-us dis-flx">

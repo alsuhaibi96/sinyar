@@ -8,6 +8,12 @@ use Illuminate\Http\Request;
 use App\Models\FooterSection;
 use App\Models\Section;
 use App\Models\HomePageSection;
+use App\Models\ClientsSaying;
+use App\Models\Slider;
+use App\Models\MediaAsset;
+
+
+
 
 
 
@@ -19,12 +25,23 @@ class HomeSection extends Controller
      */
     public function index(){
 
+      //  $say=HomePageSection::find(1)->sayings()->first();
+   
        $Section=Section::find(1);
+    
        $data= $Section->page->all();
-
+  
        $sections=Section::where('page_id',  $Section->page->id)->get();
+       $sayings=ClientsSaying::where('home_id',$Section->page->id)->get();
 
-       return view('home',compact('data','sections'));
+       $sayings=HomePageSection::with('sayings')->find(1);
+ 
+        $slider=Slider::where('page_id', $Section->page->id)->get();
+    
+ $assets=MediaAsset::where('slider_id', $slider[0]['id'])->get();
+
+
+       return view('home',compact('data','sections','sayings','slider','assets'));
     }
    /**
      * The method that returns data  of the about page to the view 
