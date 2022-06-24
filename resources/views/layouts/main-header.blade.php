@@ -40,9 +40,9 @@
             </ul>
         </nav>
         <div class="icons dis-inl-flx align-itm-center gap-20">
-          
-            
-
+            <i class="bars" id="bars">
+                <a class="fas fa-bars  bar"></a>
+            </i>
         </div>
 
     </div>

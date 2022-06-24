@@ -17,13 +17,18 @@ active
     @if($section->section=='hero_section' && $section->page_title=='home')
 
 <!--===== start landing page =====-->
-<section class="residential_landing projects_landing">
-    <div class="container dis-flx justify-center align-itm-center">
+<section class="residential_landing projects_landing" id="residential_landing">
+    <div class="container dis-flx justify-space-between align-itm-center">
         <div class="text-info ">
             <h3 class="land-header projects-head">{{ $section->title }}</h3>
             <p>{{ $section->description }}
             </p>
             <a class="btn-brdr" href="#">{{ $section->sub_title }}</a>
+        </div>
+        <div class="number-link dis-flx" id="number-link">
+            <span class="active">01</span>
+            <span class="one">02</span>
+            <span class="one">03</span>
         </div>
     </div>
 </section>
@@ -74,7 +79,7 @@ active
             <span>implemented projects</span>
         </div>
         <div class="clients statistic">
-            <h5 data-goal="370">{{ $item->clients_count }} +</h5>
+            <h5 data-goal="370">{{ $item->clients_count }}+</h5>
             <span>clients</span>
         </div>
     </div>
@@ -122,7 +127,7 @@ active
                         </div>
                     </div>
                 </div>
-         
+
                 <div class="swiper-slide">
                 <img src="{{   asset($section->img3)}}" />
                     <div class="swiper-slide-detail">
@@ -237,7 +242,8 @@ active
                     <img src="{{ url('assets/images/our_clients_logo/3Artboard 22@4x.png') }}" alt="gaz">
                 </div>
             </div>
-            <div class="swiper-pagination"></div>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
         </div>
     </div>
 
@@ -268,9 +274,9 @@ active
     var swiper = new Swiper(".customerSwiper", {
         slidesPerView: 5,
         spaceBetween: 15,
-        pagination: {
-            el: ".swiper-pagination",
-            clickable: true,
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
         },
     });
 </script>
