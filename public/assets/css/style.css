@@ -961,11 +961,17 @@ residential_landing.activeThree
     margin-top: 20px;
     margin-bottom: 20px;
 }
+.cooperate img
+{
+    max-width: 300px;
+    display: inline-block;
+    margin: auto;
+}
 
 .box-content {
     background: var(--light-gray);
     border-radius: 5px;
-    padding: 40px
+    padding: 40px;
 }
 
 .cooperate-head {
@@ -1056,6 +1062,7 @@ residential_landing.activeThree
 .recent-projects .mySwiper{
     width: 100%;
     height: 100%;
+    padding-bottom: 25px;
 }
 
 .recent-projects .swiper-slide,
@@ -1133,11 +1140,28 @@ residential_landing.activeThree
 
 .recent-projects .swiper-horizontal>.swiper-pagination-bullets .swiper-pagination-bullet,
 .recent-projects .swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet {
+    background: transparent;
+    position: relative;
+    display: inline-block;
+    font-size: 28px;
+    margin-left: 10px;
+    color: var(--stat-color);
+    padding-top: 5px;
+    padding-left: 35px;
+
+
+}
+.recent-projects .swiper-horizontal>.swiper-pagination-bullets .swiper-pagination-bullet::before,
+.recent-projects .swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet::before
+{
+    content: "";
+    position: absolute;
+    left: 6px;
+    top: 0;
     background: var(--stat-color);
     width: 60px;
-    height: 8px;
+    height: 2px;
     border-radius: 0;
-
 }
 .recent-projects .swiper-horizontal>.swiper-pagination-bullets,
 .recent-projects .swiper-pagination-bullets.swiper-pagination-horizontal,
@@ -1246,6 +1270,7 @@ residential_landing.activeThree
     line-height: 1.8;
     padding-top: 20px;
     padding-bottom: 20px;
+    max-width: 80%;
 }
 .statistics
 {
@@ -1486,6 +1511,7 @@ residential_landing.activeThree
 {
     width:calc(100% / 5) !important;
     background: none;
+    margin: 0 !important;
 
 
 }
@@ -1644,6 +1670,10 @@ residential_landing.activeThree
     .our_projects_card .project-details
     {
         margin-bottom: 25px;
+    }
+    .project-details p
+    {
+        max-width: 100%;
     }
 
 }
