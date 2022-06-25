@@ -43,7 +43,7 @@ active
     @if($section->section=='about_us' && $section->page_title=='home')
 <!--===== start about section =====-->
 <section class="about">
-    <div class="container dis-flx justify-space-between align-itm-center">
+    <div class="container dis-flx justify-space-between align-itm-center gap-20">
         <div class="project-details">
             <div class="head">
                 <h2>{{ $section->title }}</h2>
