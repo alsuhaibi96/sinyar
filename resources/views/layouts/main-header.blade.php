@@ -53,6 +53,9 @@
                 @endforeach
             </ul> --}}
 
+            <i class="bars" id="bars">
+                <a class="fas fa-bars  bar"></a>
+            </i>
         </div>
 
     </div>

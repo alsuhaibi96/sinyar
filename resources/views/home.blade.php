@@ -17,13 +17,18 @@ active
     @if($section->section=='hero_section' && $section->page_title=='home')
 
 <!--===== start landing page =====-->
-<section class="residential_landing projects_landing">
-    <div class="container dis-flx justify-center align-itm-center">
+<section class="residential_landing projects_landing" id="residential_landing">
+    <div class="container dis-flx justify-space-between align-itm-center">
         <div class="text-info ">
             <h3 class="land-header projects-head">{{ $section->title }}</h3>
             <p>{{ $section->description }}
             </p>
             <a class="btn-brdr" href="#">{{ $section->sub_title }}</a>
+        </div>
+        <div class="number-link dis-flx" id="number-link">
+            <span class="active">01</span>
+            <span class="one">02</span>
+            <span class="one">03</span>
         </div>
     </div>
 </section>
@@ -51,7 +56,7 @@ active
     </ul> --}}
 <!--===== start about section =====-->
 <section class="about">
-    <div class="container dis-flx justify-space-between align-itm-center">
+    <div class="container dis-flx justify-space-between align-itm-center gap-20">
         <div class="project-details">
             <div class="head">
                 <h2>{{$item->title }}</h2>
@@ -113,6 +118,10 @@ active
         <div class="swiper mySwiper">
             <div class="swiper-wrapper" style="height: 400px;">
                 
+
+                        </div>
+                    </div>
+                </div>
 
                 <div class="swiper-slide">
                     <img src="{{ asset('assets/images/20265-Chalet design/FENCE DESIGN.jpg') }}" />
@@ -231,7 +240,8 @@ active
                     <img src="{{ url('assets/images/our_clients_logo/3Artboard 22@4x.png') }}" alt="gaz">
                 </div>
             </div>
-            <div class="swiper-pagination"></div>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
         </div>
     </div>
 
@@ -262,9 +272,9 @@ active
     var swiper = new Swiper(".customerSwiper", {
         slidesPerView: 5,
         spaceBetween: 15,
-        pagination: {
-            el: ".swiper-pagination",
-            clickable: true,
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
         },
     });
 </script>
