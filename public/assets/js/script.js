@@ -1,7 +1,6 @@
-
-var barIcon=document.getElementById("bars");
-var menubar=document.getElementById("navBar");
-barIcon.addEventListener("click",function(){
+var barIcon = document.getElementById("bars");
+var menubar = document.getElementById("navBar");
+barIcon.addEventListener("click", function() {
     menubar.classList.toggle("active");
 });
 
@@ -22,3 +21,8 @@ var swiper = new Swiper(".swiper", {
     },
 });
 
+//lnaguage caption changing
+
+function changeCaption(variable) {
+
+}

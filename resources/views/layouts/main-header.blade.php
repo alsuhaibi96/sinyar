@@ -32,7 +32,7 @@
                     </a>
                 </li>
                 <li class="">
-                    <a class="nav_link" href="{{ route('get_in_touch') }}">
+                    <a class="nav_link" href="{{ route('contact_link') }}">
                         Get in Touch
                         <span></span>
                     </a>
@@ -40,8 +40,18 @@
             </ul>
         </nav>
         <div class="icons dis-inl-flx align-itm-center gap-20">
-          
-            
+{{--           
+            <ul>
+                @foreach(LaravelLocalization::getSupportedLocales() as $localeCode => $properties)
+                    <li>
+                        <a rel="alternate" hreflang="{{ $localeCode }}" href="{{ LaravelLocalization::getLocalizedURL($localeCode, null, [], true) }}">
+                            {{ $properties['native'] }}
+                         
+                        </a>
+                        
+                    </li>
+                @endforeach
+            </ul> --}}
 
         </div>
 

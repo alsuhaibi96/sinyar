@@ -29,11 +29,15 @@ Route::group(
 	/** All get aroutes are here**/
 	/** ADD ALL LOCALIZED ROUTES INSIDE THIS GROUP **/
 	Route::get('/',[HomeSection::class,'index'])->name('home');
+	Route::get('/contact',[HomeSection::class,'contact_link'])->name('contact_link');
+
 	Route::get('/about-us',[HomeSection::class,'about'])->name('about_us');
     Route::get('/footer_sec',[HomeSection::class,'callFooter']);
     Route::get('/projects',[ProjectsHomeController::class,'homeProjects'])->name('projects');
     Route::get('/get-in-touch',[HomeSection::class,'contact'])->name('get_in_touch');
+    // Route::get('/demo_translate',[HomeSection::class,'demo_translate']);
 
+    
 
     Route::get('/aramco_project', function () {
         return view('aramco_project');
