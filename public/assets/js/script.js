@@ -1,4 +1,5 @@
 
+
 var barIcon=document.getElementById("bars");
 var menubar=document.getElementById("navBar");
 var header=document.getElementById("navBars");
@@ -58,3 +59,8 @@ var swiper = new Swiper(".swiper", {
     },
 });
 
+//lnaguage caption changing
+
+function changeCaption(variable) {
+
+}

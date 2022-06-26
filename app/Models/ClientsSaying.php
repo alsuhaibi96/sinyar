@@ -5,11 +5,11 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class HomePageSection extends Model
+class ClientsSaying extends Model
 {
     use HasFactory;
 
-    public function sayings(){
-       return $this->hasMany(ClientsSaying::class,'home_id');
+    public function homePage(){
+        return $this->belongsTo(HomePageSection::class);
     }
 }

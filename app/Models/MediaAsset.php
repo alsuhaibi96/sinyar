@@ -4,12 +4,12 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-
-class HomePageSection extends Model
+use TCG\Voyager\Models\Page;
+class MediaAsset extends Model
 {
     use HasFactory;
 
-    public function sayings(){
-       return $this->hasMany(ClientsSaying::class,'home_id');
+    public function page(){
+        return $this->belongsTo(Page::class);
     }
 }
